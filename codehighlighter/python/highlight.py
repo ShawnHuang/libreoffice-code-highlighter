@@ -76,7 +76,7 @@ def highlight_code(code, cursor, lang, style):
         lexer = guess_lexer(code)
     else:
         lexer = get_lexer_by_name(lang)
-    style = styles.get_style_by_name(style)
+    style = styles.get_style_by_name("monokai")
     for tok_type, tok_value in lexer.get_tokens(code):
         cursor.goRight(len(tok_value), True)  # selects the token's text
         try:
